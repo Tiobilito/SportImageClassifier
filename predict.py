@@ -1,7 +1,6 @@
-# predict.py
 import numpy as np
-from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing.image import load_img, img_to_array
+from keras._tf_keras.keras.models import load_model
+from keras._tf_keras.keras.preprocessing.image import load_img, img_to_array
 
 def predict_image(model_path, image_path, target_size=(128, 128)):
     model = load_model(model_path)
@@ -23,7 +22,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # Obtener el mapeo de clases desde el dataset
-    from tensorflow.keras.preprocessing.image import ImageDataGenerator
+    from keras._tf_keras.keras.preprocessing.image import ImageDataGenerator
     test_datagen = ImageDataGenerator(rescale=1./255)
     data_gen = test_datagen.flow_from_directory(
         args.dataset,

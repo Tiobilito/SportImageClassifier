@@ -1,8 +1,7 @@
-# batch_predict.py
 import os
 from predict import predict_image
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
-from tensorflow.keras.models import load_model
+from keras._tf_keras.keras.preprocessing.image import ImageDataGenerator
+from keras._tf_keras.keras.models import load_model
 
 def load_class_labels(dataset_path, target_size=(128, 128)):
     test_datagen = ImageDataGenerator(rescale=1./255)

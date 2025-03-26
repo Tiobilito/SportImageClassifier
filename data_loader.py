@@ -1,6 +1,5 @@
-# data_loader.py
 import os
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from keras._tf_keras.keras.preprocessing.image import ImageDataGenerator
 
 def get_data_generators(dataset_dir, target_size=(128, 128), batch_size=32, validation_split=0.2):
     # Generador para entrenamiento con aumento de datos y normalización

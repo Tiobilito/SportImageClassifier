@@ -1,11 +1,10 @@
-# evaluate.py
 import os
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, classification_report
 import seaborn as sns
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
-from tensorflow.keras.models import load_model
+from keras._tf_keras.keras.preprocessing.image import ImageDataGenerator
+from keras._tf_keras.keras.models import load_model
 
 def evaluate_model(model, dataset_dir, target_size=(128, 128), batch_size=32):
     # Generador para evaluación sin aumento de datos

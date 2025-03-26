@@ -1,9 +1,8 @@
-# main.py
 import argparse
 import os
 from data_loader import get_data_generators
 from models import build_cnn_model, build_transfer_model
-from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping
+from keras._tf_keras.keras.callbacks import ModelCheckpoint, EarlyStopping
 import matplotlib.pyplot as plt
 
 def train_model(model, train_gen, valid_gen, epochs, model_save_path):

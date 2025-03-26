@@ -1,8 +1,7 @@
-# models.py
-from tensorflow.keras.models import Sequential, Model
-from tensorflow.keras.layers import Conv2D, MaxPooling2D, BatchNormalization, Dropout, Flatten, Dense, GlobalAveragePooling2D
-from tensorflow.keras.applications import VGG16
-from tensorflow.keras.optimizers import Adam
+from keras._tf_keras.keras.models import Sequential, Model
+from keras._tf_keras.keras.layers import Conv2D, MaxPooling2D, BatchNormalization, Dropout, Flatten, Dense, GlobalAveragePooling2D
+from keras._tf_keras.keras.applications import VGG16
+from keras._tf_keras.keras.optimizers import Adam
 
 def build_cnn_model(input_shape, num_classes, learning_rate=1e-3):
     model = Sequential()
