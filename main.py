@@ -58,11 +58,11 @@ if __name__ == '__main__':
     if args.model == 'cnn':
         print("Entrenando modelo CNN desde cero")
         model = build_cnn_model(input_shape, num_classes, learning_rate=args.learning_rate)
-        model_save_path = os.path.join(args.output, 'cnn_model.h5')
+        model_save_path = os.path.join(args.output, 'cnn_model.keras')
     else:
         print("Entrenando modelo con Transfer Learning (VGG16)")
         model = build_transfer_model(input_shape, num_classes, learning_rate=args.learning_rate)
-        model_save_path = os.path.join(args.output, 'transfer_model.h5')
+        model_save_path = os.path.join(args.output, 'transfer_model.keras')
 
     # Entrenar el modelo y obtener la historia
     history = train_model(model, train_gen, valid_gen, args.epochs, model_save_path)
