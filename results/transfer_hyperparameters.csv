@@ -1,0 +1,2 @@
+model,learning_rate,epochs,batch_size,conv_layers,val_accuracy
+transfer,0.0005,100,64,3,0.8495222926139832
