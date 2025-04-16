@@ -1,5 +1,6 @@
 import argparse
 import os
+import shutil
 import csv
 from data_loader import get_data_generators
 from models import build_cnn_model, build_transfer_model
@@ -96,7 +97,14 @@ if __name__ == '__main__':
         print("Construyendo y entrenando modelo con Transfer Learning (VGG16)...")
         model = build_transfer_model(input_shape, num_classes, learning_rate=args.learning_rate)
 
+    # Ruta de guardado en formato .keras
     model_path = os.path.join(args.output, f'{model_name}_model.keras')
+    
+    if os.path.exists(model_path):
+        if os.path.isdir(model_path):
+            shutil.rmtree(model_path)
+        else:
+            os.remove(model_path)
 
     # Entrenar y guardar gráficos
     history = train_model(model, train_gen, valid_gen, args.epochs, model_path)
