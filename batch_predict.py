@@ -49,8 +49,13 @@ def batch_predict(model_path, test_folder, dataset_path,
             font = ImageFont.load_default()
 
         text = f"{pred_class}: {confidence:.1f}%"
-        text_w, text_h = draw.textsize(text, font=font)
-        draw.rectangle([(0, 0), (img.width, text_h + 10)], fill=(0, 0, 0, 127))
+        # Obtener bounding box del texto
+        bbox = draw.textbbox((0, 0), text, font=font)
+        text_w = bbox[2] - bbox[0]
+        text_h = bbox[3] - bbox[1]
+
+        # Dibujar fondo semitransparente
+        draw.rectangle([(0, 0), (text_w + 10, text_h + 10)], fill=(0, 0, 0, 127))
         draw.text((5, 5), text, font=font, fill=(255, 255, 255))
 
         # Nombre único con modelo y timestamp

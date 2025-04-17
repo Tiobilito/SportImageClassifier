@@ -77,37 +77,36 @@ else:
 ```
 </details>
 
-**Resultados (CNN)**  
+**Resultados (CNN y Transfer Learning)**  
 
-<p align="center">  
-  ![Precisión](results/graphs/accuracy.png)  
-  <br>**Figura 1.** Curva de Precisión  
-</p>  
-<p align="center">  
-  ![Pérdida](results/graphs/loss.png)  
-  <br>**Figura 2.** Curva de Pérdida  
-</p>
+![Precisión CNN](results/graphs/cnn_accuracy.png)
+*Figura 1. Curva de Precisión (CNN)*
 
-| Modelo | LR     | Épocas | Batch | # Conv | Val. Accuracy |
-|:------:|:------:|:------:|:-----:|:------:|:-------------:|
-| CNN    | 0.0005 | 100    | 64    | 3      | 0.3607        |
+![Pérdida CNN](results/graphs/cnn_loss.png)
+*Figura 2. Curva de Pérdida (CNN)*
 
-> **Nota:** Los resultados de Transfer Learning suelen superar con creces este rendimiento, gracias a la reutilización de características de bajo y medio nivel aprendidas en ImageNet.
+![Precisión Transfer](results/graphs/transfer_accuracy.png)
+*Figura 3. Curva de Precisión (Transfer Learning)*
 
-**Comprobación de las 10 imágenes**  
+![Pérdida Transfer](results/graphs/transfer_loss.png)
+*Figura 4. Curva de Pérdida (Transfer Learning)*
 
-| Imagen         | Predicción     | Confianza |
-|:--------------:|:--------------:|:---------:|
-| ajedrez.jpg    | boxeo          | 17.8 %    |
-| baloncesto.jpg | baloncesto     | 35.6 %    |
-| boxeo.jpg      | boxeo          | 52.3 %    |
-| disparo.jpg    | disparo        | 20.9 %    |
-| esgrima.jpg    | disparo        | 14.7 %    |
-| formula1.jpeg  | formula1       | 36.2 %    |
-| futbol.jpg     | futbol         | 96.9 %    |
-| hockey.jpg     | hockey         | 97.6 %    |
-| natacion.jpg   | natacion       | 99.9 %    |
-| tenis.jpg      | natacion       | 46.6 %    |
+| Modelo           | LR     | Épocas | Batch | # Conv | Val. Accuracy |
+|:----------------:|:------:|:------:|:-----:|:------:|:-------------:|
+| CNN              | 0.0005 | 100    | 64    | 3      | 0.3607        |
+| Transfer Learning| 0.0005 | 50     | 32    | N/A    | 0.8123        |
+
+> **Nota:** Transfer Learning con VGG16 mostró un desempeño significativamente superior, alcanzando ∼81 % de precisión en validación, en comparación con el modelo CNN desde cero.
+
+**Predicciones de los modelos**
+
+*Predicciones CNN:*
+
+| ![cnn](results\predictions\cnn_20250416_222506_ajedrez.jpg) | ![cnn](results\predictions\cnn_20250416_222507_baloncesto.jpg) | ![cnn](results\predictions\cnn_20250416_222507_boxeo.jpg) | ![cnn](results\predictions\cnn_20250416_222508_disparo.jpg) | ![cnn](results\predictions\cnn_20250416_222509_esgrima.jpg) | ![cnn](results\predictions\cnn_20250416_222509_formula1.jpeg) | ![cnn](results\predictions\cnn_20250416_222510_futbol.jpg) | ![cnn](results\predictions\cnn_20250416_222510_hockey.jpg) | ![cnn](results\predictions\cnn_20250416_222511_natacion.jpg) | ![cnn](results\predictions\cnn_20250416_222511_tenis.jpg) | 
+
+*Predicciones Transfer Learning:*
+
+| ![cnn](results\predictions\transfer_20250416_222711_ajedrez.jpg) | ![cnn](results\predictions\transfer_20250416_222712_baloncesto.jpg) | ![cnn](results\predictions\transfer_20250416_222712_boxeo.jpg) | ![cnn](results\predictions\transfer_20250416_222713_disparo.jpg) | ![cnn](results\predictions\transfer_20250416_222713_esgrima.jpg) | ![cnn](results\predictions\transfer_20250416_222714_formula1.jpeg) | ![cnn](results\predictions\transfer_20250416_222714_futbol.jpg) | ![cnn](results\predictions\transfer_20250416_222715_hockey.jpg) | ![cnn](results\predictions\transfer_20250416_222715_natacion.jpg) | ![cnn](results\predictions\transfer_20250416_222716_tenis.jpg) |
 
 **Conclusiones y observaciones**  
 - El CNN desde cero mostró limitaciones (∼36 % val. accuracy) en clases visualmente similares.  
@@ -146,6 +145,13 @@ python predict.py --model_path models/cnn_model.keras --image single_test/imagen
 
 ## Predicción en Lote (batch_predict):
 Para recorrer y predecir todas las imágenes en la carpeta `single_test`:
+
+### CNN
 ```
-python batch_predict.py --model_path models/cnn_model.keras --test_folder single_test --dataset dataset --target_size 128
+python batch_predict.py --model_path models/cnn_model.keras --model_name cnn --test_folder single_test --dataset dataset --target_size 128 --results_dir results
+```
+
+### Transfer learning
+```
+python batch_predict.py --model_path models/transfer_model.keras --model_name transfer --test_folder single_test --dataset dataset --target_size 128 --results_dir results
 ```
