@@ -91,18 +91,42 @@ else:
 ![Pérdida Transfer](results/graphs/transfer_loss.png)
 *Figura 4. Curva de Pérdida (Transfer Learning)*
 
-| Modelo           | LR     | Épocas | Batch | # Conv | Val. Accuracy |
+| Modelo           | LR     | Épocas | Batch | # Conv | Val. Accuracy |
 |:----------------:|:------:|:------:|:-----:|:------:|:-------------:|
-| CNN              | 0.0005 | 100    | 64    | 3      | 0.3607        |
-| Transfer Learning| 0.0005 | 50     | 32    | N/A    | 0.8123        |
+| CNN              | 0.0005 | 16     | 64    | 3      | 0.4514       |
+| Transfer Learning| 0.0005 | 49     | 64    | N/A    | 0.8495       |
 
-> **Nota:** Transfer Learning con VGG16 mostró un desempeño significativamente superior, alcanzando ∼81 % de precisión en validación, en comparación con el modelo CNN desde cero.
+> **Nota:** Transfer Learning con VGG16 mostró un desempeño significativamente superior, alcanzando ~85% de precisión en validación, en comparación con el modelo CNN desde cero que alcanzó ~45%.
 
-**Predicciones de los modelos**
+**Predicciones detalladas de los modelos**
+
+*CNN - Predicciones completas:*
+- Natación: 99.98% de confianza
+- Fútbol: 97.50% de confianza
+- Hockey: 42.58% de confianza
+- Boxeo: 35.85% de confianza
+- Formula 1: 34.13% de confianza
+- Baloncesto: 30.63% (para imagen de ajedrez)
+- Baloncesto: 27.76% (para imagen de baloncesto)
+- Formula 1: 28.64% (para imagen de disparo)
+- Esgrima: 17.45% de confianza
+- Natación: 70.83% (predicción incorrecta para tenis)
 
 *Predicciones CNN:*
 
 | ![cnn](results\predictions\cnn_20250416_222506_ajedrez.jpg) | ![cnn](results\predictions\cnn_20250416_222507_baloncesto.jpg) | ![cnn](results\predictions\cnn_20250416_222507_boxeo.jpg) | ![cnn](results\predictions\cnn_20250416_222508_disparo.jpg) | ![cnn](results\predictions\cnn_20250416_222509_esgrima.jpg) | ![cnn](results\predictions\cnn_20250416_222509_formula1.jpeg) | ![cnn](results\predictions\cnn_20250416_222510_futbol.jpg) | ![cnn](results\predictions\cnn_20250416_222510_hockey.jpg) | ![cnn](results\predictions\cnn_20250416_222511_natacion.jpg) | ![cnn](results\predictions\cnn_20250416_222511_tenis.jpg) | 
+
+*Transfer Learning - Top predicciones:*
+- Ajedrez: 99.94% de confianza
+- Fútbol: 99.96% de confianza
+- Hockey: 99.89% de confianza
+- Natación: 99.84% de confianza
+- Esgrima: 98.73% de confianza
+- Tenis: 98.10% de confianza
+- Boxeo: 96.79% de confianza
+- Baloncesto: 85.18% de confianza
+- Formula 1: Solo 27.19% (predicción incorrecta como baloncesto con 61.22%)
+- Disparo: Solo 44.66% (predicción incorrecta como tenis con 47.02%)
 
 *Predicciones Transfer Learning:*
 
