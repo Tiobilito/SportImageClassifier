@@ -114,7 +114,7 @@ else:
 
 *Predicciones CNN:*
 
-| ![cnn](results\predictions\cnn_20250416_222506_ajedrez.jpg) | ![cnn](results\predictions\cnn_20250416_222507_baloncesto.jpg) | ![cnn](results\predictions\cnn_20250416_222507_boxeo.jpg) | ![cnn](results\predictions\cnn_20250416_222508_disparo.jpg) | ![cnn](results\predictions\cnn_20250416_222509_esgrima.jpg) | ![cnn](results\predictions\cnn_20250416_222509_formula1.jpeg) | ![cnn](results\predictions\cnn_20250416_222510_futbol.jpg) | ![cnn](results\predictions\cnn_20250416_222510_hockey.jpg) | ![cnn](results\predictions\cnn_20250416_222511_natacion.jpg) | ![cnn](results\predictions\cnn_20250416_222511_tenis.jpg) | 
+| ![cnn](results/predictions/cnn_20250416_222506_ajedrez.jpg) | ![cnn](results/predictions/cnn_20250416_222507_baloncesto.jpg) | ![cnn](results/predictions/cnn_20250416_222507_boxeo.jpg) | ![cnn](results/predictions/cnn_20250416_222508_disparo.jpg) | ![cnn](results/predictions/cnn_20250416_222509_esgrima.jpg) | ![cnn](results/predictions/cnn_20250416_222509_formula1.jpeg) | ![cnn](results/predictions/cnn_20250416_222510_futbol.jpg) | ![cnn](results/predictions/cnn_20250416_222510_hockey.jpg) | ![cnn](results/predictions/cnn_20250416_222511_natacion.jpg) | ![cnn](results/predictions/cnn_20250416_222511_tenis.jpg) | 
 
 *Transfer Learning - Top predicciones:*
 - Ajedrez: 99.94% de confianza
@@ -130,7 +130,7 @@ else:
 
 *Predicciones Transfer Learning:*
 
-| ![cnn](results\predictions\transfer_20250416_222711_ajedrez.jpg) | ![cnn](results\predictions\transfer_20250416_222712_baloncesto.jpg) | ![cnn](results\predictions\transfer_20250416_222712_boxeo.jpg) | ![cnn](results\predictions\transfer_20250416_222713_disparo.jpg) | ![cnn](results\predictions\transfer_20250416_222713_esgrima.jpg) | ![cnn](results\predictions\transfer_20250416_222714_formula1.jpeg) | ![cnn](results\predictions\transfer_20250416_222714_futbol.jpg) | ![cnn](results\predictions\transfer_20250416_222715_hockey.jpg) | ![cnn](results\predictions\transfer_20250416_222715_natacion.jpg) | ![cnn](results\predictions\transfer_20250416_222716_tenis.jpg) |
+| ![cnn](results/predictions/transfer_20250416_222711_ajedrez.jpg) | ![cnn](results/predictions/transfer_20250416_222712_baloncesto.jpg) | ![cnn](results/predictions/transfer_20250416_222712_boxeo.jpg) | ![cnn](results/predictions/transfer_20250416_222713_disparo.jpg) | ![cnn](results/predictions/transfer_20250416_222713_esgrima.jpg) | ![cnn](results/predictions/transfer_20250416_222714_formula1.jpeg) | ![cnn](results/predictions/transfer_20250416_222714_futbol.jpg) | ![cnn](results/predictions/transfer_20250416_222715_hockey.jpg) | ![cnn](results/predictions/transfer_20250416_222715_natacion.jpg) | ![cnn](results/predictions/transfer_20250416_222716_tenis.jpg) |
 
 **Conclusiones y observaciones**  
 - El CNN desde cero mostró limitaciones (∼36 % val. accuracy) en clases visualmente similares.  
